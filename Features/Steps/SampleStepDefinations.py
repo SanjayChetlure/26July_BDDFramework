@@ -6,7 +6,8 @@ def step_impl(context):
 
 @when('user enter url')
 def step_impl(context):
-    print("enter url")
+    print(f"enter url")
+
 
 @when('user enter username')
 def step_impl(context):
@@ -24,7 +25,6 @@ def step_impl(context):
 def step_impl(context):
     print("home page visble")
 
-
 @when('user enter invalid username')
 def step_impl(context):
     print("enter invalid UN")
@@ -33,9 +33,10 @@ def step_impl(context):
 @when('user enter invalid password')
 def step_impl(context):
     print("enter invalid PWD")
+    # assert "false"=="true", "act & expected failed"
 
 
 @then('user can see error msg')
 def step_impl(context):
-    print("login failed - error msg visible")
+    print("- error msg visible")
 
