@@ -28,7 +28,6 @@ Feature: Login to application
     And user click on login btn
     Then user should be at home page
 
-
   @E2E
   Scenario: S4-login to app with valid credentials
     Given user open browser
