@@ -16,7 +16,7 @@ login.clickSwagLabLoginPageLoginBtn()
 time.sleep(3)
 home=Home.SwagLabHomePage(driver)
 actLogoText=home.getSwagLabHomePageLogoText()
-expLoloText="Swag Labs1"
+expLoloText="Swag Labs"
 
 if actLogoText==expLoloText:
     print("PASS")
