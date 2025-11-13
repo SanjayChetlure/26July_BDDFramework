@@ -9,13 +9,18 @@ class SwagLabLoginPage:
     usernameXpath="//input[@id='user-name']"
     passwordXpath="//input[@id='password']"
     loginBtnXpath="//input[@id='login-button']"
+    loginFailedErrorMsg="//h3[contains(text(),'Username and password do not match')]"
 
 
-    def inpSwagLabLoginPageUN(self):
-        self.driver.find_element(By.XPATH,self.usernameXpath).send_keys("standard_user")
+    def inpSwagLabLoginPageUN(self,UN):
+        self.driver.find_element(By.XPATH,self.usernameXpath).send_keys(UN)
 
-    def inpSwagLabLoginPagePWD(self):
-        self.driver.find_element(By.XPATH,self.passwordXpath).send_keys("secret_sauce")
+    def inpSwagLabLoginPagePWD(self,PWD):
+        self.driver.find_element(By.XPATH,self.passwordXpath).send_keys(PWD)
 
     def clickSwagLabLoginPageLoginBtn(self):
         self.driver.find_element(By.XPATH,self.loginBtnXpath).click()
+
+    def getSwagLabLoginPageErrorMsgDisplayed(self):
+        result=self.driver.find_element(By.XPATH,self.loginFailedErrorMsg).is_displayed()
+        return result
