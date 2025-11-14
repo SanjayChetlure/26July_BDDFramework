@@ -1,7 +1,7 @@
 import time
 from selenium import webdriver
-import Login
-import Home
+import Login1
+import Home1
 
 driver=webdriver.Firefox()
 driver.get("https://www.saucedemo.com/")

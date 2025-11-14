@@ -12,11 +12,11 @@ def before_scenario(context, scenario):
     print("Starting test execution: opening browser")
     context.driver = webdriver.Firefox()
     context.driver.maximize_window()
-    context.driver.get("https://www.saucedemo.com")
+
 
 def after_scenario(context, scenario):
     print("Starting test execution: opening browser")
-    context.driver.quite()
+    context.driver.quit()
 
 
 # def before_step(context, step):
