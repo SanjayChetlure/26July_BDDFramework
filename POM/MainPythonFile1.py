@@ -1,7 +1,6 @@
 import time
 from selenium import webdriver
-import Login1
-import Home1
+
 
 from Features.Pages import Login, Home
 

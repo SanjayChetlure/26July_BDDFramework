@@ -1,5 +1,8 @@
 from selenium import webdriver
 
+from Utilities import ConfigReader
+
+
 # def before_all(context):
 #     print("Starting test execution: opening browser")
 #     context.driver=webdriver.Firefox()
@@ -10,7 +13,15 @@ from selenium import webdriver
 
 def before_scenario(context, scenario):
     print("Starting test execution: opening browser")
-    context.driver = webdriver.Firefox()
+
+    browserName=ConfigReader.read_configuration("basic info","browser")
+
+    if browserName=="chrome":
+        context.driver = webdriver.Chrome()
+    elif browserName=="firefox":
+        context.driver = webdriver.Firefox()
+    elif browserName=="edge":
+        context.driver = webdriver.Edge()
     context.driver.maximize_window()
 
 

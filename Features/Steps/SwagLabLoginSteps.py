@@ -1,11 +1,13 @@
 from behave import given, when, then, Then
 from Features.Pages.Home import SwagLabHomePage
 from Features.Pages.Login import SwagLabLoginPage
+from Utilities import ConfigReader
 
 
 @given(u'user is on swagLab login page')
 def step_impl(context):
-    context.driver.get("https://www.saucedemo.com/")
+    urlValue=ConfigReader.read_configuration("basic info","url")
+    context.driver.get(urlValue)
 
 
 @when(u'user enter username "{username}" on swagLab login page')
