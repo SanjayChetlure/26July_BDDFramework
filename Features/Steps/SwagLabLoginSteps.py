@@ -10,14 +10,16 @@ def step_impl(context):
     context.driver.get(urlValue)
 
 
-@when(u'user enter username "{username}" on swagLab login page')
-def step_impl(context,username):
+@when(u'user enter username "{UN}" on swagLab login page')
+def step_impl(context,UN):
+    UNValue=ConfigReader.read_configuration("credentials", UN)
     context.loginPage=SwagLabLoginPage(context.driver)
-    context.loginPage.inpSwagLabLoginPageUN(username)
+    context.loginPage.inpSwagLabLoginPageUN(UNValue)
 
-@when(u'user enter password "{password}" on swagLab login page')
-def step_impl(context,password):
-    context.loginPage.inpSwagLabLoginPagePWD(password)
+@when(u'user enter password "{PWD}" on swagLab login page')
+def step_impl(context,PWD):
+    PWDValue = ConfigReader.read_configuration("credentials", PWD)
+    context.loginPage.inpSwagLabLoginPagePWD(PWDValue)
 
 
 @when(u'user clicks login btn on swagLab login page')
@@ -25,11 +27,10 @@ def step_impl(context):
     context.loginPage.clickSwagLabLoginPageLoginBtn()
 
 
-
 @then(u'user should be on swagLab home page with logoText "{expLogoText}"')
 def step_impl(context,expLogoText):
-    homePage=SwagLabHomePage(context.driver)
-    actLogoText=homePage.getSwagLabHomePageLogoText()
+    context.homePage=SwagLabHomePage(context.driver)
+    actLogoText=context.homePage.getSwagLabHomePageLogoText()
     assert actLogoText==expLogoText, "Failed - act & exp logo text are diff"
 
 

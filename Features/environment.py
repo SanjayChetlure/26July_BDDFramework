@@ -30,6 +30,10 @@ def after_scenario(context, scenario):
     context.driver.quit()
 
 
+def after_step(context, step):
+    if step.status == "failed":
+        context.driver.save_screenshot(f"screenshots/{step.name}.png")
+
 # def before_step(context, step):
 #     print(f"Starting step:")
 #
