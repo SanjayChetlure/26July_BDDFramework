@@ -12,6 +12,7 @@ class SwagLabHomePage:
     removeBtn = "//button[text()='Remove']"
     allProducts="//div[@class='inventory_item_name ']"
     SauceLabsBackPackProductPrice = "(//div[@class='inventory_item_price'])[1]"
+    cartLink="//a[@class='shopping_cart_link']"
 
 
     def getSwagLabHomePageLogoText(self):
@@ -38,3 +39,6 @@ class SwagLabHomePage:
         actProductPrice=self.driver.find_element(By.XPATH,self.SauceLabsBackPackProductPrice).text  #  $29.99
         actProductPrice=actProductPrice[1:]           #   29.99
         return actProductPrice
+
+    def clickSwagLabHomePageCartLink(self):
+        self.driver.find_element(By.XPATH, self.cartLink).click()

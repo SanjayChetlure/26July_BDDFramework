@@ -38,5 +38,7 @@ def step_impl(context,expProductPrice):
     actProductPrice=context.homePage.getSwagLabHomePageSauceLabsBackPackProductPrice()
     assert actProductPrice==expProductPrice,"Failed-Remove btn is not visible"
 
-
+@when(u'user click on cart link')
+def step_impl(context):
+    context.homePage.clickSwagLabHomePageCartLink()
 
