@@ -13,5 +13,5 @@ class SwagLabYourCartPage:
         return self.driver.find_element(By.XPATH,self.CartPageLogoText).is_displayed()
 
     def clickSwagLabYourCartPagecheckoutBtn(self):
-        return self.driver.find_element(By.XPATH,self.checkout).click()
+        self.driver.find_element(By.XPATH,self.checkout).click()
 
