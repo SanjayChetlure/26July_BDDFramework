@@ -10,16 +10,13 @@ Feature: product features
     And user wait for "1" sec
     When user is on SwagLab home page
 
-
   Scenario: S3-add to cart button functionality
     And user click on addToCart btn
     And user wait for "2" sec
     Then remove btn is visible
 
-
   Scenario: S4-verify total product count on home page
     Then verify total "6" products are available on home page
-
 
   @addToCart
   Scenario: S5-verify price on specific product
