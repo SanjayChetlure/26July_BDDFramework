@@ -8,7 +8,7 @@ Background:
     When user enter username "UN" on swagLab login page
     And user enter password "PWD" on swagLab login page
     And user clicks login btn on swagLab login page
-    Then user should be on swagLab home page with logoText "Swag Labs1s"
+    Then user should be on swagLab home page with logoText "Swag Labs"
 
   @sanity
   Scenario: s2- login to swaglab app using invalid credentials
