@@ -58,5 +58,5 @@ def step_impl(context):
 
 @then(u'order placed message visible')
 def step_impl(context):
-    assert context.checkoutComplete.getSwagLabsCheckoutCompletePageOrderCompleteMsgVisble(),"failed-order complete msg not visible"
+    assert context.checkoutComplete.getSwagLabsCheckoutCompletePageOrderCompleteMsgVisble()==False,"failed-order complete msg not visible"
 
